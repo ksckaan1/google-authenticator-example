@@ -61,7 +61,6 @@ func getHOTPToken(secret string, interval int64) string {
 	//Takes division from one million to generate a remainder less than < 7 digits
 	h12 := (int(header) & 0x7fffffff) % 1000000
 
-	//Converts number as a string
 	otp := strconv.Itoa(h12)
 
 	return prefix0(otp)
